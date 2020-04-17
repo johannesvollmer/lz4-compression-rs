@@ -31,3 +31,8 @@ path = "fuzz_targets/roundtrip.rs"
 [[bin]]
 name = "decode_encoded_with_reference"
 path = "fuzz_targets/decode_encoded_with_reference.rs"
+
+
+[[bin]]
+name = "decode_our_encoding_with_reference"
+path = "fuzz_targets/decode_our_encoding_with_reference.rs"
