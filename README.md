@@ -2,15 +2,12 @@
 [![Documentation](https://docs.rs/lz4-compression/badge.svg)](https://docs.rs/crate/lz4-compression/)
 
 
-# lz4-compression
+# LZ4-compression
 
-Pure rust implementation of lz4 compression and decompression.
+A pure Rust implementation of LZ4 compression and decompression. Currently, this implementation is __not 100% compatible with the reference implementation__. Pull requests are welcome though!
 
-This is based on [redox-os' lz4 compression](https://github.com/redox-os/tfs/tree/master/lz4),
-but has been reworked to be actually usable as a library crate.
-
-(The [redox-os lz4 crate](https://crates.io/crates/lz4-compress) 
-does not re-export the error types and does not merge pull requests)
+This is based on [redox-os' LZ4 compression](https://github.com/redox-os/tfs/tree/master/lz4),
+but has been tweaked a little in order to be actually usable as a library crate. 
 
 Usage: 
 ```rust
