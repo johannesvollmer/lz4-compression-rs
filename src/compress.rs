@@ -4,7 +4,7 @@
 //! high performance. It has fixed memory usage, which contrary to other approachs, makes it less
 //! memory hungry.
 
-use byteorder::{NativeEndian, ByteOrder};
+use std::convert::TryInto;
 
 /// Duplication dictionary size.
 ///
@@ -115,7 +115,7 @@ impl<'a> Encoder<'a> {
     fn get_batch(&self, n: usize) -> u32 {
         debug_assert!(self.remaining_batch(), "Reading a partial batch.");
 
-        NativeEndian::read_u32(&self.input[n..])
+        u32::from_ne_bytes(self.input[n..n+4].try_into().unwrap())
     }
 
     /// Read the batch at the cursor.
