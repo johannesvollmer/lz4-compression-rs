@@ -1,7 +1,6 @@
 #![no_main]
 use libfuzzer_sys::fuzz_target;
 use lz4_compression::decompress::decompress;
-use lz4_compression::compress::compress;
 
 fuzz_target!(|data: &[u8]| {
     let compression_result = reference_compress(data);
@@ -14,7 +13,7 @@ fuzz_target!(|data: &[u8]| {
 // compress data using the reference lz4 implementation 
 fn reference_compress(data: &[u8]) -> Result<Vec<u8>,()> {
     let mut input = std::io::Cursor::new(data);
-    let mut output = std::io::Cursor::new(Vec::new());
+    let output = std::io::Cursor::new(Vec::new());
     let mut encoder = lz4::EncoderBuilder::new()
         .level(4)
         .build(output).unwrap();
