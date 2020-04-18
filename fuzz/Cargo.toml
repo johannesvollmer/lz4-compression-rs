@@ -29,10 +29,10 @@ name = "roundtrip"
 path = "fuzz_targets/roundtrip.rs"
 
 [[bin]]
-name = "decode_encoded_with_reference"
-path = "fuzz_targets/decode_encoded_with_reference.rs"
+name = "interop_decode"
+path = "fuzz_targets/interop_decode.rs"
 
 
 [[bin]]
-name = "decode_our_encoding_with_reference"
-path = "fuzz_targets/decode_our_encoding_with_reference.rs"
+name = "interop_encode"
+path = "fuzz_targets/interop_encode.rs"
