@@ -6,8 +6,7 @@
 
 A pure Rust implementation of LZ4 compression and decompression. Currently, this implementation is __not 100% compatible with the reference implementation__. Pull requests are welcome though!
 
-This is based on [redox-os' LZ4 compression](https://github.com/redox-os/tfs/tree/master/lz4),
-but has been tweaked a little in order to be actually usable as a library crate. 
+This is based on [redox-os' LZ4 compression](https://github.com/redox-os/tfs/tree/master/lz4), but has been gradually improved since then. 
 
 Usage: 
 ```rust
@@ -22,3 +21,7 @@ fn main(){
     assert_eq!(uncompressed_data, decompressed_data.as_slice());
 }
 ```
+
+
+# Thanks to all contributors
+- [Sergey Davidoff](https://github.com/Shnatsel)
