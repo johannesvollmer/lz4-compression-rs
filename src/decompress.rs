@@ -1,6 +1,6 @@
 //! The decompression algorithm.
 
-use byteorder::{LittleEndian, ByteOrder};
+use std::convert::TryInto;
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Hash)]
 pub enum Error {
@@ -117,8 +117,9 @@ impl<'a> Decoder<'a> {
     /// Read a little-endian 16-bit integer from the input stream.
     #[inline]
     fn read_u16(&mut self) -> Result<u16, Error> {
-        // We use byteorder to read an u16 in little endian.
-        Ok(LittleEndian::read_u16(self.take(2)?))
+        // Read a u16 in little endian.
+        let bytes = self.take(2)?;
+        Ok(u16::from_le_bytes(bytes.try_into().unwrap()))
     }
 
     /// Read the literals section of a block.
