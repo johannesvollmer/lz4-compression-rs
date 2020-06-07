@@ -41,7 +41,7 @@ struct Duplicate {
 }
 
 /// An LZ4 encoder.
-pub struct Encoder<'a> {
+struct Encoder<'a> {
     /// The raw uncompressed input.
     input: &'a [u8],
 
