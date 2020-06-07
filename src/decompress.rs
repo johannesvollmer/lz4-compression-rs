@@ -15,7 +15,7 @@ pub enum Error {
 ///
 /// This will decode in accordance to the LZ4 format. It represents a particular state of the
 /// decompressor.
-pub struct Decoder<'a> {
+struct Decoder<'a> {
 
     /// The compressed input.
     input: &'a [u8],
