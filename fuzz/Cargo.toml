@@ -11,6 +11,7 @@ cargo-fuzz = true
 
 [dependencies]
 libfuzzer-sys = "0.3"
+lz4 = "1.23.1"
 
 [dependencies.lz4-compression]
 path = ".."
@@ -26,3 +27,12 @@ path = "fuzz_targets/decompress.rs"
 [[bin]]
 name = "roundtrip"
 path = "fuzz_targets/roundtrip.rs"
+
+[[bin]]
+name = "interop_decode"
+path = "fuzz_targets/interop_decode.rs"
+
+
+[[bin]]
+name = "interop_encode"
+path = "fuzz_targets/interop_encode.rs"
